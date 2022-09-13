@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliver Fast</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+
+</head>
+
+<body onload="start()">
+    <div id="popup" class="popup d-none" onclick="closePopup()">
+        <div class="popup-text" onclick="stop(event)">
+            <h2>Popup</h2>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati deserunt minima alias
+            corrupti maiores
+            suscipit velit blanditiis nemo dolore. Nihil voluptas nostrum animi nam, sed esse fugit beatae nobis omnis!
+        </div>
+    </div>
+
+    <header class="logo">
+        <img src="img/logo.png">
+        <p>Straßburger Stieg 5, 22049 Hamburg</p>
+        <img class="menu" src="img/menu-offnen.png">
+
+
+    </header>
+
+    <div class="content">
+        <div class="left-content">
+            <img src="img/header.jpg">
+
+            <div class="headline">
+                <h1>deliver fast</h1>
+                <img class="second-logo" src="img/pizza.png">
+                <div class="hover">
+                    <img onclick="openPopup()" src="img/info.png">
+                    <img src="img/unlike.png">
+                </div>
+            </div>
+            <div class="rating">
+                <img src="img/rating.png">
+                <p>(2589 Bewertungen)</p>
+            </div>
+
+            <div class="margin">
+
+                <div id="foods"></div>
+            </div>
+        </div>
+
+
+
+        <div class="right-content basket-center">
+            <h2>Warenkorb</h2>
+            <img src="img/basket.png">
+            <p class="basket" id="shoppingBasket">Fülle deinen Warenkorb.<br>
+                Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+            <div id="price"></div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div>
+            <a href="#">Ein Restaurant empfehlen</a>
+            <a href="#">Ein Restaurant anmelden</a>
+            <a href="#">Jobs</a>
+            <a href="#">AGB</a>
+            <a href="#">Datenschutzerklärung</a>
+            <a href="#">Impressum</a>
+            <a href="#">Verwendung von Cookies</a>
+            <a href="#">Bug Bounty</a>
+            <a href="#">Ethik-Hotline</a>
+            <div style="margin-top: 16px;"><a href="#">© 2022 Lieferando.de</a></div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
