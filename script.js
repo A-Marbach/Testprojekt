@@ -1,5 +1,5 @@
 let foods = ['Hamburger', 'Chesseburger', 'Chickenburger', 'Pizza Tonno', 'Pizza Mozzarella', 'Pizza Salami', 'Gemischter Salat', 'Hirtensalat', 'Thunfischsalat'];
-let ingredients = ['Bullette, Tomate, Gurke', 'Bullette, Käse, Tomate, Gürke', 'Hähnchenfleisch, Käse, Zwiebel, Tomate, Remoulade', 'Thunfisch, Tomatensoße, Zwiebel', 'Mozzarella', 'Salami, Zwiebel', 'Eisbergsalat und Römersalat mit Cherry-Tomaten, Gurke und Mais', 'Eisbergsalat und Römersalat mit Cherry-Tomaten, Gurke, Mais, Thunfisch, Hirtenkäse, und roten Zwiebeln'];
+let ingredients = ['Bullette, Tomate, Gurke', 'Bullette, Käse, Tomate, Gürke', 'Hähnchenfleisch, Käse, Zwiebel, Tomate, Remoulade', 'Thunfisch, Tomatensoße, Zwiebel', 'Mozzarella', 'Salami, Zwiebel', 'Eisbergsalat und Römersalat mit Cherry-Tomaten, Gurke und Mais', 'Eisbergsalat und Römersalat mit Cherry-Tomaten, Gurke, Mais, Thunfisch, Hirtenkäse, und roten Zwiebeln', 'Thunfisch, Eisbergsalat, Tomaten, Gurken, Zwiebel, Mais, Hirtenkäse'];
 let prices = [5.90, 6.90, 7.90, 9.90, 8.90, 10.90, 5.30, 6.20, 5.80];
 let amounts = [];
 let basketFood = [];
@@ -19,7 +19,7 @@ function start() {
     <h2><b>${food}</b></h2>
     <p>${ingredient}</p>
     <b>${formattedPrice}</b>
-    <button onclick="addFood(${i})" class="btn">+</button
+    <button onclick="addFood(${i}), showBasket()" class="btn">+</button
     </div>
     `;
     }
@@ -95,9 +95,9 @@ function updatePriceBasket(basketFood) {
     </table>
     </div>
 
-    <button class="bestellBtn" onclick="bestellt(${totalSum})">Bestellen</button>
+    <button class="bestellBtn" onclick="bestellt(${totalSum})">Bestellen ${totalSum.toFixed(2).replace(".", ",")}€</button>
     `;
-
+    
 }
 
 function bestellt(i) {
@@ -141,3 +141,32 @@ function closePopup(){
 function stop(event){
     event.stopPropagation();
 }
+/*
+function showBasket(){
+    const mediaQuery = window.matchMedia('(max-width: 900px)')
+    if(mediaQuery.matches){
+    let content = document.getElementById('d-none');
+    content.innerHTML = '';
+    document.getElementById('d-none').classList.remove('d-none');
+    for (let i = 0; i < basketFood.length; i++) {
+        const food = basketFood[i];
+        const price = basketPrices[i];
+        const amount = amounts[i];
+        const formattedPrice = price.toFixed(2).replace(".", ",")
+        content.innerHTML += `
+     <div class="basket-sum basket-center" >
+     <b>${amount}</b>
+     <b>${food}</b> <b>${formattedPrice}€</b><br>
+     <div >
+     <button onclick="addAmount(${i})" class="href">+</button>
+     <button onclick="deleteAmount(${i})" class="href" onclick="Delete()" >-</button>
+     </div>
+     
+     </div>
+      `;
+    }}
+   
+    updatePriceBasket(basketFood);
+
+}
+    */

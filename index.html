@@ -14,7 +14,7 @@
 
 <body onload="start()">
     <div id="popup" class="popup d-none" onclick="closePopup()">
-        <div class="popup-text" onclick="stop(event)">
+        <div id="basket" class="popup-text" onclick="stop(event)">
             <h2>Popup</h2>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati deserunt minima alias
             corrupti maiores
@@ -33,18 +33,19 @@
     <div class="content">
         <div class="left-content">
             <img src="img/header.jpg">
-
-            <div class="headline">
-                <h1>deliver fast</h1>
-                <img class="second-logo" src="img/pizza.png">
-                <div class="hover">
-                    <img onclick="openPopup()" src="img/info.png">
-                    <img src="img/unlike.png">
+            <div class="responsive">
+                <div class="headline">
+                    <h1>deliver fast</h1>
+                    <img class="second-logo" src="img/pizza.png">
+                    <div class="hover">
+                        <img onclick="openPopup()" src="img/info.png">
+                        <img src="img/unlike.png">
+                    </div>
                 </div>
-            </div>
-            <div class="rating">
-                <img src="img/rating.png">
-                <p>(2589 Bewertungen)</p>
+                <div class="rating">
+                    <img src="img/rating.png">
+                    <p>(2589 Bewertungen)</p>
+                </div>
             </div>
 
             <div class="margin">
@@ -64,6 +65,7 @@
 
         </div>
 
+        
     </div>
 
 

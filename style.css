@@ -3,8 +3,8 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.popup{
-    background-color:rgba(0, 0, 0, 0.2);
+.popup {
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 999;
     position: fixed;
     top: 0;
@@ -16,24 +16,26 @@ body {
     align-items: center;
 }
 
-.popup-text{
+.popup-text {
     background-color: white;
     height: 50vh;
     width: 50vw;
     border: 1px solid lightgray;
     border-radius: 10px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding-top: 50px;
-   padding-left: 32px;
-   padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
+
 .logo {
     height: 100px;
     background-color: orange;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 32px;
     text-decoration: underline;
 
@@ -43,10 +45,9 @@ body {
 
 
 .menu {
-    width: 30px;
-    height: 30px;
-    margin-top: 32px;
-    margin-right: 32px;
+    width: 30px !important;
+    height: 30px !important;
+
     cursor: pointer;
 
 }
@@ -57,25 +58,24 @@ body {
 
 .left-content {
     width: 70%;
-   
+
 }
 
 .left-content img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    
-    
-    
+
 }
 
-.margin{
+.margin {
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 100px;
-   margin-top: 50px;
+    margin-top: 50px;
 
 }
+
 .second-logo {
     height: 120px !important;
     width: 150px !important;
@@ -84,7 +84,6 @@ body {
     position: relative;
     border: none !important;
     top: -80px;
-    
 
 }
 
@@ -93,7 +92,7 @@ body {
     justify-content: space-between;
     margin-left: 12px;
     height: 55px;
-    
+
 }
 
 .headline img {
@@ -104,10 +103,12 @@ body {
     padding-right: 16px;
     width: 32px;
     height: 32px;
+
 }
 
 .headline img:hover {
     border: 1px solid orange;
+
 }
 
 
@@ -115,23 +116,25 @@ body {
     display: flex;
     margin-left: 10px;
     position: relative;
+
 }
 
 .rating img {
     width: 120px !important;
     height: 50px !important;
-    margin-bottom: 16px;
+
 }
 
-.slider{
+.slider {
     background-color: lightgray;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 8px;
-    
+
 }
+
 .right-content {
     height: 100vh;
     width: 30%;
@@ -148,20 +151,20 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: white;
     padding-left: 8px;
-    
+
 }
 
-footer a:hover{
+footer a:hover {
     text-decoration: underline;
+
 }
-/*Javascript Classes*/
 
 .food-script {
     position: relative;
@@ -173,7 +176,7 @@ footer a:hover{
 
 .food-script:hover {
     border: 2px solid orange;
-    
+
 }
 
 .btn {
@@ -214,7 +217,7 @@ footer a:hover{
 
 .href {
     font-size: 24px;
-   
+
     cursor: pointer;
     border: 1px solid lightgray;
 }
@@ -246,4 +249,93 @@ footer a:hover{
 
 .d-none {
     display: none;
+}
+
+@media(max-width: 1000px) {
+    .logo {
+        font-size: 20px;
+
+    }
+
+
+}
+
+@media (max-width: 900px) {
+    .right-content {
+        display: none;
+
+    }
+
+    .left-content {
+        width: 100%;
+    }
+
+    .basket-center {
+        background-color: white;
+        height: 50vh;
+        width: 50vw;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding-top: 50px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media (max-width: 700px) {
+
+
+    .second-logo {
+        display: none;
+    }
+
+    .logo {
+        font-size: 14px;
+
+    }
+
+    .logo img {
+        width: 100px;
+        height: 50px;
+    }
+
+    /*
+    .logo img {
+        width: 80px;
+        height: 50px;
+    }
+
+    .responsive{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+*/
+
+}
+
+@media(max-width: 400px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    
+    .rating img {
+        width: 70px !important;
+        height: 20px !important;
+    }
+
+    .rating {
+        flex-direction: column;
+        font-size: 10px;
+    }
+
+    .headline img {
+        width: 26px;
+        height: 26px;
+    }
+    .margin{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 }
