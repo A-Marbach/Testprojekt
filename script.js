@@ -7,7 +7,7 @@ let basketPrices = [];
 
 
 function start() {
-   
+
 
     let content = document.getElementById('foods');
     for (let i = 0; i < foods.length; i++) {
@@ -47,26 +47,26 @@ function updateShoppingBasket() {
         constant.innerHTML = `
         <p>Fülle deinen Warenkorb.<br>
                 Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>`;
-    }else{
+    } else {
         document.getElementById('price').classList.remove('d-none');
 
-    for (let i = 0; i < basketFood.length; i++) {
-        const food = basketFood[i];
-        const price = basketPrices[i];
-        const amount = amounts[i];
-        const formattedPrice = price.toFixed(2).replace(".", ",")
-        constant.innerHTML += `
+        for (let i = 0; i < basketFood.length; i++) {
+            const food = basketFood[i];
+            const price = basketPrices[i];
+            const amount = amounts[i];
+            const formattedPrice = price.toFixed(2).replace(".", ",")
+            constant.innerHTML += `
      <div class="basket-sum" >
      <b>${amount}</b>
      <b>${food}</b> <b>${formattedPrice}€</b><br>
      <div >
      <button onclick="addAmount(${i})" class="href">+</button>
-     <button onclick="deleteAmount(${i})" class="href" onclick="Delete()" >-</button>
+     <button onclick="deleteAmount(${i}) " class="href" onclick="Delete()" >-</button>
      </div>
      
      </div>
       `;
-    }
+        }
     }
     updatePriceBasket(basketFood);
 }
@@ -79,9 +79,9 @@ function updatePriceBasket(basketFood) {
         sum += basketPrices[i] * amounts[i];
 
     }
-    
+
     let totalSum = sum + subTotal;
-    
+
     document.getElementById('price').innerHTML = `
     <div class="sum">
     <table>
@@ -99,7 +99,7 @@ function updatePriceBasket(basketFood) {
 
     <button class="bestellBtn" onclick="bestellt(${totalSum})">Bestellen ${totalSum.toFixed(2).replace(".", ",")}€</button>
     `;
-    
+
 }
 
 function bestellt(i) {
@@ -116,7 +116,8 @@ function addAmount(i) {
     amounts[i]++;
     updatePriceBasket();
     updateShoppingBasket();
-    watchBasketMobile()
+    watchBasketMobile();
+    watchBasketPrice();
 
 }
 
@@ -130,37 +131,40 @@ function deleteAmount(i) {
     }
     updatePriceBasket();
     updateShoppingBasket();
-    watchBasketMobile()
-    
+    watchBasketMobile();
+    watchBasketPrice();
+
 }
 
-function openPopup(){
+function openPopup() {
     document.getElementById('popup').classList.remove('d-none');
 }
 
-function closePopup(){
+function closePopup() {
     document.getElementById('popup').classList.add('d-none');
-    
+
 }
 
-function stop(event){
+function stop(event) {
     event.stopPropagation();
 }
 
-function watchBasketMobile(){
+function watchBasketMobile() {
+    
     let content = document.getElementById('mobile');
     content.classList.remove('d-none');
-    let container = document.getElementById('mobile');
-    container.innerHTML ='';
-
+    let container = document.getElementById('mobile-basket');
+    container.innerHTML = '';
    
-    for (let i = 0; i < basketFood.length; i++) {
-        const food = basketFood[i];
-        const price = basketPrices[i];
-        const amount = amounts[i];
-        const formattedPrice = price.toFixed(2).replace(".", ",")
-        content.innerHTML += `
-     <div class="basket-sum mobile-text"  onclick="stop(event)">
+    if (window.matchMedia("(max-width: 900px)").matches) {
+
+        for (let i = 0; i < basketFood.length; i++) {
+            const food = basketFood[i];
+            const price = basketPrices[i];
+            const amount = amounts[i];
+            const formattedPrice = price.toFixed(2).replace(".", ",")
+            container.innerHTML += `
+     <div class="basket-sum">
      <b>${amount} </b>
      <b>${food} </b> <b>${formattedPrice}€</b><br>
      <div >
@@ -170,16 +174,48 @@ function watchBasketMobile(){
      
      </div>
       `;
+        }
+    } else {
+        content.classList.add('d-none');
     }
-    
     updatePriceBasket(basketFood);
+    
+}
+function watchBasketPrice(){
+    let sum = 0;
+    let subTotal = 1.50;
+
+    for (let i = 0; i < basketPrices.length; i++) {
+        sum += basketPrices[i] * amounts[i];
+
+    }
+
+    let totalSum = sum + subTotal;
+    document.getElementById('mobile-price').innerHTML = `
+    <div >
+    <table>
+    <tr>
+    <td><b>Zwischensumme: ${sum.toFixed(2).replace(".", ",")}€</b></td>
+    </tr>
+    <tr>
+    <td><b>Lieferkosten: ${subTotal.toFixed(2).replace(".", ",")}€</b></td>
+    </tr>
+    <tr>
+    <td><b>Gesamtsumme: ${totalSum.toFixed(2).replace(".", ",")}€</b></td>
+    </tr>
+    </table>
+    </div>
+
+    <button class="bestellBtn" onclick="bestellt(${totalSum})">Bestellen ${totalSum.toFixed(2).replace(".", ",")}€</button>
+    `;
 }
 
-function closeMobile(){
+
+function closeMobile() {
     let content = document.getElementById('mobile');
     content.classList.add('d-none');
-   
 
 
-     
+
+
 }

@@ -68,14 +68,13 @@
         </div>
 
         <div id="mobile" class="mobile d-none" onclick="closeMobile()">
-            <div id="mobile-basket" class="mobile-text"  onclick="stop(event)">
-                <div></div>
-                <div id="mobile-price"></div>
-            </div>
-
-        </div>
+            <div class="mobile-text">
+            <div id="mobile-basket"   onclick="stop(event)">  </div>
+            <div id="mobile-price" class="sum"></div>
+        </div></div>
         <div class="btn-center">
-            <button onclick="watchBasketMobile()" id="mobile-screen" class="mobile-screen d-none">Warenkorb</button>
+            <button onclick="watchBasketMobile(), watchBasketPrice()" id="mobile-screen" class="mobile-screen d-none">Warenkorb</button>
+            
         </div>
     </div>
 
