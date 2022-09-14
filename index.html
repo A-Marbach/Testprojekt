@@ -22,6 +22,8 @@
         </div>
     </div>
 
+
+
     <header class="logo">
         <img src="img/logo.png">
         <p>Straßburger Stieg 5, 22049 Hamburg</p>
@@ -65,7 +67,16 @@
 
         </div>
 
-        
+        <div id="mobile" class="mobile d-none" onclick="closeMobile()">
+            <div id="mobile-basket" class="mobile-text"  onclick="stop(event)">
+                <div></div>
+                <div id="mobile-price"></div>
+            </div>
+
+        </div>
+        <div class="btn-center">
+            <button onclick="watchBasketMobile()" id="mobile-screen" class="mobile-screen d-none">Warenkorb</button>
+        </div>
     </div>
 
 
@@ -82,6 +93,7 @@
             <a href="#">Ethik-Hotline</a>
             <div style="margin-top: 16px;"><a href="#">© 2022 Lieferando.de</a></div>
         </div>
+
 
     </footer>
 

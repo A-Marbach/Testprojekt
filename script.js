@@ -7,6 +7,8 @@ let basketPrices = [];
 
 
 function start() {
+   
+
     let content = document.getElementById('foods');
     for (let i = 0; i < foods.length; i++) {
         let food = foods[i];
@@ -19,7 +21,7 @@ function start() {
     <h2><b>${food}</b></h2>
     <p>${ingredient}</p>
     <b>${formattedPrice}</b>
-    <button onclick="addFood(${i}), showBasket()" class="btn">+</button
+    <button onclick="addFood(${i})" class="btn">+</button
     </div>
     `;
     }
@@ -114,6 +116,7 @@ function addAmount(i) {
     amounts[i]++;
     updatePriceBasket();
     updateShoppingBasket();
+    watchBasketMobile()
 
 }
 
@@ -127,6 +130,8 @@ function deleteAmount(i) {
     }
     updatePriceBasket();
     updateShoppingBasket();
+    watchBasketMobile()
+    
 }
 
 function openPopup(){
@@ -141,22 +146,23 @@ function closePopup(){
 function stop(event){
     event.stopPropagation();
 }
-/*
-function showBasket(){
-    const mediaQuery = window.matchMedia('(max-width: 900px)')
-    if(mediaQuery.matches){
-    let content = document.getElementById('d-none');
-    content.innerHTML = '';
-    document.getElementById('d-none').classList.remove('d-none');
+
+function watchBasketMobile(){
+    let content = document.getElementById('mobile');
+    content.classList.remove('d-none');
+    let container = document.getElementById('mobile');
+    container.innerHTML ='';
+
+   
     for (let i = 0; i < basketFood.length; i++) {
         const food = basketFood[i];
         const price = basketPrices[i];
         const amount = amounts[i];
         const formattedPrice = price.toFixed(2).replace(".", ",")
         content.innerHTML += `
-     <div class="basket-sum basket-center" >
-     <b>${amount}</b>
-     <b>${food}</b> <b>${formattedPrice}€</b><br>
+     <div class="basket-sum mobile-text"  onclick="stop(event)">
+     <b>${amount} </b>
+     <b>${food} </b> <b>${formattedPrice}€</b><br>
      <div >
      <button onclick="addAmount(${i})" class="href">+</button>
      <button onclick="deleteAmount(${i})" class="href" onclick="Delete()" >-</button>
@@ -164,9 +170,16 @@ function showBasket(){
      
      </div>
       `;
-    }}
-   
+    }
+    
     updatePriceBasket(basketFood);
-
 }
-    */
+
+function closeMobile(){
+    let content = document.getElementById('mobile');
+    content.classList.add('d-none');
+   
+
+
+     
+}

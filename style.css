@@ -16,6 +16,30 @@ body {
     align-items: center;
 }
 
+.mobile{
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-text{
+    background-color: white;
+    height: 50vh;
+    width: 50vw;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
 .popup-text {
     background-color: white;
     height: 50vh;
@@ -200,7 +224,6 @@ footer a:hover {
     display: flex;
     justify-content: space-between;
     padding: 12px;
-
     color: black;
     font-size: 18px;
 }
@@ -251,21 +274,41 @@ footer a:hover {
     display: none;
 }
 
+.mobile-screen{
+    background-color: orange;
+    padding: 8px;
+    position: fixed;
+    bottom: 10px;
+    left:16px;
+    right: 16px;
+    font-size: 24px;
+    border-radius: 10px;
+    
+}
+
+.mobile-screen:hover{
+    background-color: rgb(228, 199, 146);
+}
+
+.mobile-center{
+    display: flex;
+    justify-content: center;
+}
 @media(max-width: 1000px) {
     .logo {
         font-size: 20px;
-
     }
-
-
 }
 
 @media (max-width: 900px) {
     .right-content {
         display: none;
-
     }
 
+    .mobile-screen{
+        display: flex;
+        justify-content: center;
+    }
     .left-content {
         width: 100%;
     }
@@ -280,6 +323,9 @@ footer a:hover {
         padding-left: 32px;
         padding-right: 32px;
     }
+    .mobile-text{
+        flex-direction: inherit;
+    }
 }
 
 @media (max-width: 700px) {
@@ -289,14 +335,15 @@ footer a:hover {
         display: none;
     }
 
-    .logo {
-        font-size: 14px;
+    .logo p {
+        display: none;
 
     }
 
-    .logo img {
-        width: 100px;
-        height: 50px;
+    
+
+    .mobile-text{
+        flex-direction: inherit;
     }
 
     /*
@@ -337,5 +384,9 @@ footer a:hover {
     .margin{
         margin-left: 50px;
         margin-right: 50px;
+    }
+
+    .basket-sum{
+        flex-direction: column;
     }
 }
