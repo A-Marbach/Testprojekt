@@ -32,7 +32,8 @@ body {
 
 .mobile-text{
     background-color: white;
-    
+    max-height: 500px;
+    overflow-y: scroll;
     width: 50vw;
     border: 1px solid lightgray;
     border-radius: 10px;
