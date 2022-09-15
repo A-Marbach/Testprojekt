@@ -213,6 +213,8 @@ footer a:hover {
 
 .basket {
     border: 1px solid lightgray;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 .basket-center {
